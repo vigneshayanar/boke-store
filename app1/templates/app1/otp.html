@@ -1,0 +1,28 @@
+{% extends 'app1/base.html' %}
+{% block content %}
+<header class="bg-dark py-5">
+    <div class="container px-4 px-lg-5 my-5">
+        <div class="text-center text-white">
+            <h1 class="display-4 fw-bolder">Login</h1>
+            <p class="lead fw-normal text-white-50 mb-0">Otp</p>
+        </div>
+    </div>
+</header>
+<br>
+<div class="row">
+    <div class="col-8">
+<form method="post" action="{% url 'otp' %}" class="ff">
+    {% csrf_token %}
+    <div class="mb-3" style="width:350px;margin-left:55%;">
+        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="email id" name="email">
+      </div>
+    <br>
+    <button type="submit"  style="width:350px;margin-left:55%;"class="btn btn-secondary">verify</button>
+  </form>
+</div>
+</div>
+<br>
+<br><br>
+<br>
+<br>
+{% endblock %}

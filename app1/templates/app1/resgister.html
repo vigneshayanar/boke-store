@@ -1,0 +1,38 @@
+{% extends 'app1/base.html' %}
+{% block content %}
+<header class="bg-dark py-5">
+    <div class="container px-4 px-lg-5 my-5">
+        <div class="text-center text-white">
+            <h1 class="display-4 fw-bolder">Register</h1>
+            <p class="lead fw-normal text-white-50 mb-0">Register to Buyers Family</p>
+        </div>
+    </div>
+</header>
+<br>
+<div class="row">
+    <div class="col-8">
+<form method="post" action="{% url 'register' %}" class="ff">
+    {% csrf_token %}
+    <div class="mb-3" style="width:350px;margin-left:55%;">
+      <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter your name" name="name">
+    </div>
+    <div class="mb-3" style="width:350px;margin-left:55%;">
+        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="email id" name="email">
+      </div>
+    <div class="mb-3" style="width:350px;margin-left:55%;">
+      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password1" name="password">
+    </div>
+    <div class="mb-3" style="width:350px;margin-left:55%;margin-top: 10px;">
+        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="enter the password again" name="password2">
+      </div>
+    <br>
+    <button type="submit"  style="width:350px;margin-left:55%;"class="btn btn-secondary">Register</button>
+  </form>
+</div>
+</div>
+<br>
+<br>
+<br><br>
+<br>
+<br>
+{% endblock %}

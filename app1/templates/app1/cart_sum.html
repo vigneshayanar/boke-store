@@ -1,0 +1,69 @@
+{% extends 'app1/base.html' %}
+{% load static %}
+
+{% block content %}
+<header class="bg-dark py-5">
+    <div class="container px-4 px-lg-5 my-5">
+        <div class="text-center text-white">
+            <h1 class="display-4 fw-bolder">Shopping cart</h1>
+            <p class="lead fw-normal text-white-50 mb-0">With this shop </p>
+        </div>
+    </div>
+</header>
+<br>
+<br>
+<div class="container">
+    {% if cart_products %}
+    {% for product in cart_products %}
+    <div class="container">
+        <div class="card mb-3" style="max-height: 300px;">
+            <div class="row">
+                <!-- Column for Image -->
+                <div class="col-md-4">
+                    <img src="{{product.image.url}}" class="img-fluid rounded-start" alt="">
+                </div>
+                
+                <!-- Column for Product Information -->
+                <div class="col-md-8">
+                    <div class="card-body" style="max-height: 300px; overflow: hidden;">
+                        <center>
+                            <h5 class="card-title">{{product.name}}</h5>
+                            <p class="card-text">{{product.description}}</p>
+                            
+                            {% if product.is_sale %}
+                                <div class="d-flex justify-content-center small text-warning mb-2"></div>
+                                <strike>{{product.price}}₹</strike>
+                                {{product.sale_price}}
+                            {% else %}
+                                {{product.price}}₹<br>
+                            {% endif %}
+                           
+                            <a href="{% url 'home' %}" class="btn btn-secondary">Home</a>
+                          
+                        </center>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br><br>
+    <br>
+    <br>
+    <br>
+    <br>
+    {% endfor %}
+    {% else %}
+    <div class="container">
+        <center>
+               <strong style="padding: 10px;width:20px;margin-top:10px;color:black"> There is nothin in cart</strong>
+            </center>
+    </div>
+   {% endif %}
+</div>
+
+<br><b><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+{% endblock %}

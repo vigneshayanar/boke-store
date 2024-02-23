@@ -1,0 +1,32 @@
+{% extends 'app1/base.html' %}
+{% block content %}
+<header class="bg-dark py-5">
+    <div class="container px-4 px-lg-5 my-5">
+        <div class="text-center text-white">
+            <h1 class="display-4 fw-bolder">Login</h1>
+            <p class="lead fw-normal text-white-50 mb-0">Login to Buyers</p>
+        </div>
+    </div>
+</header>
+<br>
+<div class="row">
+    <div class="col-8">
+<form method="post" action="{% url 'login' %}" class="ff">
+    {% csrf_token %}
+    <div class="mb-3" style="width:350px;margin-left:55%;">
+      <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter your name" name="name">
+    </div>
+    <br>
+    <div class="mb-3" style="width:350px;margin-left:55%;">
+      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="password">
+    </div>
+    <br>
+    <button type="submit"  style="width:350px;margin-left:55%;"class="btn btn-secondary">login</button>
+  </form>
+</div>
+</div>
+<br>
+<br><br>
+<br>
+<br>
+{% endblock %}
